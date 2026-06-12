@@ -4,14 +4,14 @@ require('dotenv').config();
 const sendOTP = async (email, otp) => {
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: 465,
-      secure: true, // Use true for 465
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+  host: 'sandbox.smtp.mailtrap.io', // <--- CHANGED
+  port: 2525,                       // <--- CHANGED
+  secure: false,                    // <--- CHANGED (Crucial for 2525)
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
     const mailOptions = {
       from: process.env.SMTP_USER,
