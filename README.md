@@ -38,7 +38,7 @@ Rather than building a traditional monolith, UniSmart utilizes a **Decoupled Mic
 git clone https://github.com/Akashyadav1234-hub/UniSmart-Attendance-System.git
 cd UniSmart-Attendance-System
 
-2. Install Dependencies
+### 2. Install Dependencies
 
 # Install frontend dependencies
 cd frontend
@@ -48,7 +48,7 @@ npm install
 cd ../backend
 npm install
 
-3. Environment Configuration
+### 3. Environment Configuration
 Create a .env file in the root of your backend directory. You will need to configure the following environment variables:
 
 # Database
@@ -64,21 +64,22 @@ SMTP_PORT=465
 SMTP_USER=your_mailtrap_username
 SMTP_PASS=your_mailtrap_password
 
-4. Run the Application
+### 4. Run the Application
 Start the backend server:
 
 cd backend
 npm run dev
 
-Start the frontend development server:
+### Start the frontend development server:
 
 cd frontend
 npm run dev
 
-🧠 Engineering Decisions & Trade-offs
+### 🧠 Engineering Decisions & Trade-offs
 Why separate Vercel and Render? Vercel is unparalleled for serving React-based UIs quickly using serverless functions, but serverless environments drop persistent database connections. Render provides a continuous runtime environment, ensuring MongoDB connections stay warm and WebSocket/stream capabilities remain open.
 Why not use native Gmail SMTP? During load testing, deploying an Express app on a cloud provider like Render triggered Google's automated data-center spam filters, causing ETIMEDOUT and ENETUNREACH errors. Integrating a professional SMTP relay bypasses these blocks, mimicking enterprise-grade infrastructure.
-👨‍💻 Author
+
+### 👨‍💻 Author
 Akash Yadav
 B.Tech Computer Science (Cybersecurity & Digital Forensics) @ UPES
 GitHub Profile
